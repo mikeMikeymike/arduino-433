@@ -242,7 +242,7 @@ void receiveRcData(){
     long pulse = mySwitch.getReceivedDelay();
     long protocol = mySwitch.getReceivedProtocol();
     if (value != 0) {
-      String out = value + dash + pulse + dash + protocol;
+      String out = String(value) + dash + String(pulse) + dash + String(protocol);
 #ifdef USE_WEBSOCKET
       webSocket.broadcastTXT(out);
 #endif
